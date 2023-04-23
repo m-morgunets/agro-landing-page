@@ -4,8 +4,7 @@
   "description": "start gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gulp build && gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vadim Prokopchuk",
   "license": "ISC",
@@ -16,6 +15,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.1.0",
