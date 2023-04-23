@@ -3,9 +3,9 @@ const { src, dest, watch, parallel, series, task } = require("gulp");
 const dartSass = require("sass");
 const gulpSass = require("gulp-sass");
 const scss = gulpSass(dartSass);
-const concat = require("gulp-concat");
-const browserSync = require("browser-sync").create();
-const uglify = require("gulp-uglify");
+const concat = require('gulp-concat');
+const browserSync = require('browser-sync').create();
+const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require("gulp-autoprefixer");
 const del = require("del");
 const ghPages = require("gh-pages");
@@ -54,7 +54,11 @@ function styles() {
 }
 
 function stylesLibs() {
-	return src(["node_modules/normalize.css/normalize.css"])
+	return src([
+    'node_modules/normalize.css/normalize.css',
+    'node_modules/slick-carousel/slick/slick.css',
+    'node_modules/animate.css/animate.css'
+  ])
 		.pipe(concat("_libs.scss"))
 		.pipe(dest("app/scss"))
 		.pipe(browserSync.reload({ stream: true }));
